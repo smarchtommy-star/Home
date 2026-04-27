@@ -4,9 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/", label: "动态" },
-  { href: "/timeline", label: "时间线" },
-  { href: "/publish", label: "发布" },
+  { href: "/", label: "动态", hint: "首页主场景" },
+  { href: "/timeline", label: "时间线", hint: "按日期回看" },
+  { href: "/publish", label: "发布", hint: "独立入口" },
 ];
 
 export function BottomNav() {
@@ -14,7 +14,7 @@ export function BottomNav() {
 
   return (
     <nav className="fixed inset-x-0 bottom-0 z-20 mx-auto w-full max-w-md px-4 pb-5">
-      <div className="soft-panel mx-auto flex items-center justify-between rounded-full px-3 py-2 shadow-[0_16px_40px_rgba(80,54,38,0.08)]">
+      <div className="soft-panel mx-auto flex items-center justify-between rounded-[28px] px-2 py-2">
         {navItems.map((item) => {
           const active =
             item.href === "/"
@@ -25,13 +25,22 @@ export function BottomNav() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex-1 rounded-full px-4 py-3 text-center text-sm transition ${
+              className={`flex flex-1 flex-col items-center rounded-[20px] px-3 py-3 text-center transition ${
                 active
-                  ? "bg-[var(--accent-soft)] font-medium text-[var(--ink-900)]"
-                  : "text-[var(--ink-700)] hover:bg-white/60"
+                  ? "bg-[var(--page-panel-deep)] text-[var(--ink-900)]"
+                  : "text-[var(--ink-700)] hover:bg-[rgba(255,251,246,0.7)]"
               }`}
             >
-              {item.label}
+              <span
+                className={`text-sm font-medium ${
+                  active ? "text-[var(--accent)]" : ""
+                }`}
+              >
+                {item.label}
+              </span>
+              <span className="mt-1 text-[11px] text-[var(--ink-500)]">
+                {item.hint}
+              </span>
             </Link>
           );
         })}

@@ -12,6 +12,7 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "Design-Patterns-in-Javascript-es6/**",
   ]),
 ]);
 

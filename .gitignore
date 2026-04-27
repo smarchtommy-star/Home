@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# unrelated local examples
+/Design-Patterns-in-Javascript-es6/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

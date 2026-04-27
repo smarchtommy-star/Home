@@ -7,11 +7,7 @@ interface ReactionListProps {
 
 export function ReactionList({ comments }: ReactionListProps) {
   if (comments.length === 0) {
-    return (
-      <p className="fine-copy mt-4">
-        还没有短评，先保留一点安静也没关系。
-      </p>
-    );
+    return <p className="fine-copy mt-4">还没有短评，先留一点安静也很好。</p>;
   }
 
   return (
@@ -19,7 +15,7 @@ export function ReactionList({ comments }: ReactionListProps) {
       {comments.map((comment) => (
         <div
           key={comment.reaction.id}
-          className="rounded-[20px] border border-[var(--line)] bg-white/75 px-4 py-3"
+          className="rounded-[20px] border border-[var(--line)] bg-[rgba(255,251,246,0.84)] px-4 py-3"
         >
           <div className="flex items-center justify-between gap-4">
             <p className="text-sm font-medium text-[var(--ink-900)]">

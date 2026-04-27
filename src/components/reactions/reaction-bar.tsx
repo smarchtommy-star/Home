@@ -16,13 +16,15 @@ export function ReactionBar({ counts }: ReactionBarProps) {
           <button
             key={option.value}
             type="button"
-            className="rounded-full border border-[var(--line)] bg-white px-3 py-2 text-sm text-[var(--ink-700)] transition hover:border-[var(--accent)] hover:text-[var(--ink-900)]"
+            className="rounded-full border border-[var(--line)] bg-[rgba(255,251,246,0.9)] px-3 py-2 text-sm text-[var(--ink-700)] transition hover:border-[var(--accent)] hover:bg-[var(--accent-wash)] hover:text-[var(--ink-900)]"
           >
             {option.label}
           </button>
         ))}
       </div>
-      <p className="fine-copy mt-3">{summary || "Phase 3 会接入固定暖回应的本地交互。"}</p>
+      <p className="fine-copy mt-3">
+        {summary || "先把回应的语气和位置放对，真正的交互会在 Phase 3 接上。"}
+      </p>
     </div>
   );
 }
